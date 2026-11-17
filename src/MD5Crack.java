@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -73,3 +74,8 @@ public final class MD5Crack {
         return new String(chars);
     }
 }
+=======
+public class MD5Crack {
+    
+}
+>>>>>>> 1e0a8bfbb3740333075b29388cc639b99a62ae2e
