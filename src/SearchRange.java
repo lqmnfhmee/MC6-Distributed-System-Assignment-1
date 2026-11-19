@@ -1,6 +1,4 @@
-/**
- * Represents a contiguous, non-overlapping sub-range [startIndex, endIndex)
- * of the total search space, assigned to a single worker thread.
+/* Represents a contiguous, non-overlapping sub-range [startIndex, endIndex) of the total search space, assigned to a single worker thread.
  */
 public class SearchRange {
 
@@ -30,13 +28,8 @@ public class SearchRange {
         return endIndex - startIndex;
     }
 
-    /**
-     * Splits the total search space [0, totalSpace) into `numThreads`
-     * non-overlapping ranges whose sizes differ by at most 1, so the ranges
-     * fully cover the search space even when totalSpace does not divide
-     * evenly by numThreads. The first (totalSpace % numThreads) ranges get
-     * one extra index each.
-     */
+    /* dividing total search space into contiguous sub-ranges for each thread to figure out the baseline number of passwords every thread should be assigned */
+     
     public static SearchRange[] partition(long totalSpace, int numThreads) {
         SearchRange[] ranges = new SearchRange[numThreads];
         long baseChunk = totalSpace / numThreads;
@@ -44,7 +37,7 @@ public class SearchRange {
 
         long start = 0;
         for (int i = 0; i < numThreads; i++) {
-            long size = baseChunk + (i < remainder ? 1 : 0);
+            long size = baseChunk + (i < remainder ? 1 : 0); 
             long end = start + size;
             ranges[i] = new SearchRange(i, start, end);
             start = end;
