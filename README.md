@@ -1,8 +1,6 @@
 
 # MC6 - Distributed Systems Assignment 1
 
-Leader group yang hensem
-
 ## Project Overview
 A Java multithreaded MD5 password-searching
 application developed for TMT4703 Distributed
